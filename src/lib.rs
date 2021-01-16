@@ -7,30 +7,30 @@
 /// Implements a boolean `and` gate taking as input two bits and returning a bit as its
 /// output
 pub fn and(a: u8, b: u8) -> u8 {
-    match (a, b) {
+    match (a,b) {
         (1, 1) => 1,
-        _ => 0,
+        _ => 0
     }
 }
 
 /// Implements a boolean `xor` gate taking as input two bits and returning a bit as its
 /// output
 pub fn xor(a: u8, b: u8) -> u8 {
-    match (a, b) {
+    match (a,b) {
         (1, 0) | (0, 1) => 1,
-        _ => 0,
+        _ => 0
     }
 }
 
 #[cfg(test)]
 mod tests {
-    use crate::{and, xor};
+    use crate::{xor, and};
     #[test]
     fn test_and() {
         assert_eq!(1, and(1, 1));
         assert_eq!(0, and(0, 1));
         assert_eq!(0, and(1, 0));
-        assert_eq!(0, and(0, 0));
+        assert_eq!(0, and(0,0));
     }
 
     #[test]
